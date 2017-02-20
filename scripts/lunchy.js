@@ -22,7 +22,9 @@ module.exports = (robot) => {
   //console.log('ROBOT:', robot.adapterName, 'MAP:', _.flatMap(robot));
 
   robot.respond(/(search|add)(.*)/i, teamPlace.searchRestaurants.bind(teamPlace));
+  robot.respond(/(create list)(.*)/i, teamPlace.createList.bind(teamPlace));
   robot.respond(/(location)(.*)/i, teamPlace.searchCities.bind(teamPlace));
-  robot.respond(/list/i, teamPlace.list.bind(teamPlace));
+  //robot.respond(/list/i, teamPlace.list.bind(teamPlace));
+  robot.respond(/menus/i, teamPlace.menus.bind(teamPlace));
   robot.respond(/remove(.*)/i, teamPlace.removePlace.bind(teamPlace));
 };
